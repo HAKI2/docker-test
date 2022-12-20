@@ -1,0 +1,11 @@
+services:
+  web:
+    build: ./
+    container_name: 'recruto-docker'
+    command: python app.py run -h 0.0.0.0
+    volumes:
+      - ./:/usr/src/app/
+    ports:
+      - 5000:5000
+    env_file:
+      - ./.env.dev
